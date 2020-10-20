@@ -24,9 +24,9 @@
 	<div class="section">
 		<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
   		<div class="navbar-brand">
-				<b class="ml-3 mt-2 is-size-4" style="font-family: Caveat;" href="{{ url('/') }}">
+				<a class="ml-3 mt-2 is-size-4" style="font-family: Caveat;" href="{{ url('/') }}">
 					{{ config('app.name', 'Laravel') }}
-				</b>
+				</a>
 				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>

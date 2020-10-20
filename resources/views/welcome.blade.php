@@ -52,7 +52,7 @@
             .links {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 20px;
+                font-size: 25px;
                 font-weight: 200;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -60,11 +60,11 @@
             }
             .links > a {
                 color: #636b6f;
-                padding: 25px 25px;
                 font-size: 20px;
+                padding: 0 25px;
                 font-weight: 200;
                 letter-spacing: .1rem;
-                text-decoration: none;
+                text-decoration: underlined;
                 text-transform: uppercase;
             }
 
@@ -75,8 +75,14 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel ToDo List
+                </div>
+
+                <div class="links">
+                    Please Login or Register to use ToDo list ! <hr />
+                    @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -86,16 +92,7 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    Please Login or Register to use ToDo list !
+                    @endif
                 </div>
             </div>
         </div>
