@@ -37,7 +37,7 @@
 							<a href="{{ route('todo.edit', $todo->id) }}" class="button is-info">
 								<i class="fa fa-marker"></i>
 							</a>
-							<button wire:click="destroy({{$todo->id}})" class="button is-danger"><i class="fa fa-trash"></i></button>
+							<button onclick="confirm('Confirm delete?') || event.stopImmediatePropagation()" wire:click="destroy({{$todo->id}})" class="button is-danger"><i class="fa fa-trash"></i></button>
 						</div>
 					</div>
 				</div>
