@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Session;
 use App\Todo;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class TodoController extends Controller
       Session::put('sort_name', 'asc');
     }
 
-		$todos = Todo::where('is_active', 1)->orderBy('name', Session::get('sort_name'))->get();
+		$todos = Todo::where('is_active', 1)->where('user_id', Auth::id())->orderBy('name', Session::get('sort_name'))->get();
 
 		return view('todo.index')->withTodos($todos);
 
@@ -64,6 +65,7 @@ class TodoController extends Controller
 		$due_date = date("Y-m-d", strtotime($request->due_date));
 
 		$store = new Todo;
+		$store->user_id = Auth::id();
 		$store->name = $request->name;
 		$store->place = $request->place;
 		$store->due_date = $due_date;
@@ -83,7 +85,11 @@ class TodoController extends Controller
 	public function show($id)
 	{
 		$todo = Todo::where('id', $id)->first();
-		return view('todo.show')->withTodo($todo);
+		if($todo->user_id == Auth::id()) {
+			return view('todo.show')->withTodo($todo);
+		} else {
+			return redirect()->route('todo.index');
+		}
 	}
 
 	/**
@@ -95,7 +101,11 @@ class TodoController extends Controller
 	public function edit($id)
 	{
 		$todo = Todo::where('id', $id)->first();
-		return view('todo.edit')->withTodo($todo);
+		if($todo->user_id == Auth::id()) {
+			return view('todo.edit')->withTodo($todo);
+		} else {
+			return redirect()->route('todo.index');
+		}
 	}
 
 	/**
