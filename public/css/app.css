@@ -19370,3 +19370,7 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   transform: scale(1);
 }
 
+.sidemenu_background {
+  background-image: linear-gradient(160deg, #0093E9 0%, #fff 100%);
+}
+

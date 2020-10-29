@@ -12,7 +12,7 @@
 	  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 		<!-- Styles -->
-		<link href="{{ asset('css/app.css') }}?v=2" rel="stylesheet">
+		<link href="{{ asset('css/app.css') }}?v=3" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
 		{{-- TODO: move only in needed views with yield 'styles' --}}
 		@livewireStyles
