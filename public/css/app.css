@@ -19223,3 +19223,150 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   }
 }
 
+.auth {
+  font-family: "Exo 2";
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.auth_title {
+  padding-top: 50px;
+  font-family: "Caveat";
+  font-size: 4rem;
+  text-align: center;
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+.auth_subtitle {
+  font-family: "Caveat";
+  font-size: 1.2rem;
+  text-align: center;
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+.auth_wrapper {
+  /* background: #50a3a2; */
+  /* background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); */
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.auth_container {
+  /* max-width: 600px; */
+  margin: 0 auto;
+  padding-top: 8vh;
+  /* height: 400px; */
+  text-align: center;
+}
+
+.auth input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.auth input:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.auth input:focus {
+  background-color: white;
+  width: 330px;
+  color: #53e3a6;
+}
+
+.auth button {
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 15px 20px;
+  color: #48B5D6;
+  margin-top: 30px;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 24px;
+  transition-duration: 0.5s;
+}
+
+.auth button:hover {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.auth a {
+  color: #fff;
+  font-size: 15px;
+}
+
+.auth i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.auth [type=checkbox]:not(:checked),
+[type=checkbox]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.auth [type=checkbox]:not(:checked) + label,
+[type=checkbox]:checked + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.auth [type=checkbox]:not(:checked) + label:before,
+[type=checkbox]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.auth [type=checkbox]:not(:checked) + label:after,
+[type=checkbox]:checked + label:after {
+  content: "\2713   ";
+  position: absolute;
+  top: 0px;
+  left: 6px;
+  font-size: 18px;
+  color: #0A98E7;
+  transition: all 0.3s;
+}
+
+.auth [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.auth [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
