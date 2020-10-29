@@ -1,44 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="columns is-centered">
-	<div class="column is-4">
-		<div class="box">
-      <div class="has-text-centered is-size-3 mb-5">{{ __('Login') }}</div>
-			<form method="POST" action="{{ route('login') }}">
-			@csrf
-				<label for="email" class="label mt-3">{{ __('E-Mail Address') }}</label>
-				<input id="email" type="email" class="input @error('email') is-danger @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-				@error('email')
-					<span role="alert">
-						<strong class="has-text-danger">{{ $message }}</strong>
-					</span>
-				@enderror
-				<label for="password" class="label mt-3">{{ __('Password') }}</label>
-				<input id="password" type="password" class="input @error('password') is-danger @enderror" name="password" required autocomplete="current-password">
-				@error('password')
-					<span role="alert">
-						<strong class="has-text-danger">{{ $message }}</strong>
-					</span>
-				@enderror
-				<div class="mt-4">
-					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-					<label class="form-check-label" for="remember">
-					{{ __('Remember Me') }}
-					</label>
-				</div>
-				<div class="mt-5">
+<div class="auth auth_wrapper">
+	<div class="auth_title">Todo Assistent</div>
+	<div class="auth_subtitle">by aleXandar encheW</div>
+	<div class="auth_container">
+		<form method="POST" action="{{ route('login') }}">
+		@csrf
 
-					<button type="submit" class="button is-medium is-success">{{ __('Login') }}</button>
-					@if (Route::has('password.request'))
-					<br />
-					<a class="" href="{{ route('password.request') }}">
-						{{ __('Forgot Your Password?') }}
-					</a>
-					@endif
-				</div>
-			</form>
-		</div>
+			<label for="email">{{ __('E-Mail Address') }}</label>
+			<input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+			@error('email')
+				<i>{{ $message }}</i>
+			@enderror
+
+			<label for="password">{{ __('Password') }}</label>
+			<input id="password" type="password" name="password" required>
+			@error('password')
+				<i>{{ $message }}</i>
+			@enderror
+			
+			<br />
+			<div class="remember">
+				<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+				<label for="remember">{{ __('Remember Me') }}</label>
+			</div>
+			<br />
+
+			<button type="submit">{{ __('Login') }}</button>
+
+			@if (Route::has('password.request'))
+			<br />
+			<a href="{{ route('password.request') }}">
+				{{ __('Forgot Your Password?') }}
+			</a>
+			<br /><br />
+			@endif
+		</form>
+				You don't have account ?
+		<br />
+		<a href="{{ route('register') }}">Sing UP now!</a>
 	</div>
 </div>
 @endsection

@@ -1,6 +1,5 @@
-<table class="table is-fullwidth">
+<div class="column is-12">
 	@foreach($data as $todo)
-	<tr><td>
 		<div class="column is-12">
 			<div class="box">
 				<div class="columns">
@@ -43,6 +42,5 @@
 				</div>
 			</div>
 		</div>
-	</td></tr>
 	@endforeach
-</table>
+</div>
